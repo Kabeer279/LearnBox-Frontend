@@ -1,11 +1,13 @@
 import { Routes } from '@angular/router';
 import { ClassComponent } from '../class/class.component';
+import { ClassdetailComponent } from '../classdetail/classdetail.component';
 
 
 
 export const routes: Routes = [
-  { path: 'class',  component: ClassComponent },
-  
-  { path: '', redirectTo: '/class', pathMatch: 'full' }
+
+  { path: 'classess',  component: ClassComponent },
+  { path: 'classdetail',   component: ClassdetailComponent},
+  { path: '', redirectTo: '/classdetail', pathMatch: 'full' }
   
 ];

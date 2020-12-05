@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ClassService } from '../services/class.service';
+import { Class } from '../shared/class';
 
 @Component({
   selector: 'app-class',
@@ -8,20 +10,14 @@ import { FormControl } from '@angular/forms';
 })
 export class ClassComponent implements OnInit {
 
-  dogs = [  {"id":1,"title":"yes", "rel":"as" ,"overview": "asd" } ,
-            {"id":2,"title":"yes", "rel":"as" ,"overview": "asd" } ,
-            {"id":3,"title":"yes", "rel":"as" ,"overview": "asd" } ,
-            {"id":4,"title":"yes", "rel":"as" ,"overview": "asd" } ,
-            {"id":5,"title":"yes", "rel":"as" ,"overview": "asd" } ,
-            {"id":6,"title":"yes", "rel":"as" ,"overview": "asd" } ,
-            {"id":7,"title":"yes", "rel":"as" ,"overview": "asd" } 
-];
+ classess : Class[]; 
   
-mode = new FormControl('over');
 
-  constructor() { }
+  constructor( private classService : ClassService) { }
 
   ngOnInit(): void {
+
+    this.classess = this.classService.getClassess(); 
   }
 
 }
