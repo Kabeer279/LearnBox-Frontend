@@ -21,3 +21,15 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+ .mat-tab-label{
+  color: black;
+  font-size: large;
+  font-weight: bold;
+}
+ .mat-ink-bar {
+
+  color: blue;
+  padding-bottom: 3px;
+  border-radius: 90px;
+}

@@ -11,6 +11,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -26,22 +27,30 @@ import { MatSliderModule} from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClassComponent } from './class/class.component';
 import { ClassdetailComponent } from './classdetail/classdetail.component';
+import { ClassHeaderComponent } from './classdetail/class-header/class-header.component';
+import { StreamComponent } from './classdetail/stream/stream.component';
+import { ClassService } from './services/class.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ClassComponent,
-    ClassdetailComponent
+    ClassdetailComponent,
+    ClassHeaderComponent,
+    StreamComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
     FlexLayoutModule,
     MatListModule,
+    MatTabsModule,
     MatButtonModule,
     MatSidenavModule,
     MatCardModule,
@@ -61,7 +70,7 @@ import { ClassdetailComponent } from './classdetail/classdetail.component';
 
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ClassService],
   bootstrap: [AppComponent],
   entryComponents:
    [

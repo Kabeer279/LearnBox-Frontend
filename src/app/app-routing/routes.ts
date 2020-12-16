@@ -7,7 +7,7 @@ import { ClassdetailComponent } from '../classdetail/classdetail.component';
 export const routes: Routes = [
 
   { path: 'classess',  component: ClassComponent },
-  { path: 'classdetail',   component: ClassdetailComponent},
-  { path: '', redirectTo: '/classdetail', pathMatch: 'full' }
+  { path: 'classdetail/:id',   component: ClassdetailComponent},
+  { path: '', redirectTo: '/classess', pathMatch: 'full' }
   
 ];
