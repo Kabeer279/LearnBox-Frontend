@@ -1,7 +1,7 @@
 
 export class Class
 {
-        id : string;
+       // id : string;
         name : string;
         description : string;
 

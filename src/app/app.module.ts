@@ -19,7 +19,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule , ReactiveFormsModule } from '@angular/forms'; 
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -31,6 +31,12 @@ import { ClassHeaderComponent } from './classdetail/class-header/class-header.co
 import { StreamComponent } from './classdetail/stream/stream.component';
 import { ClassService } from './services/class.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { UserAccountService } from './services/userAccount.service';
+import { SignupComponent } from './signup/signup.component';
+import { DashBoardComponent } from './dash-board/dash-board.component';
+import { CreateclassformComponent } from './class/createclassform/createclassform.component';
+import { JoinClassFormComponent } from './class/join-class-form/join-class-form.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,12 @@ import { HttpClientModule } from '@angular/common/http';
     ClassComponent,
     ClassdetailComponent,
     ClassHeaderComponent,
-    StreamComponent
+    StreamComponent,
+    LoginComponent,
+    SignupComponent,
+    DashBoardComponent,
+    CreateclassformComponent,
+    JoinClassFormComponent
   ],
   imports: [
     BrowserModule,
@@ -64,13 +75,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatSlideToggleModule,
     MatProgressSpinnerModule ,
     FormsModule ,
-
-
-
+    ReactiveFormsModule ,
 
     BrowserAnimationsModule
   ],
-  providers: [ClassService],
+  providers: [ClassService,UserAccountService],
   bootstrap: [AppComponent],
   entryComponents:
    [

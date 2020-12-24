@@ -19,7 +19,7 @@ export class StreamComponent implements OnInit {
 ngOnInit() {
    this.id = this.route.snapshot.paramMap.get('id');
    console.log(this.id);
-   this.selectedClass = this.classService.getClass(this.id); 
+  // this.selectedClass = this.classService.getClass(this.id); 
    console.log(this.selectedClass);
    this.classService.postData(this.id)
    .subscribe(data => console.log(data));

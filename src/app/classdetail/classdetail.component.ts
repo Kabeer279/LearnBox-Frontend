@@ -18,8 +18,8 @@ export class ClassdetailComponent implements OnInit {
 ngOnInit() {
    this.id = this.route.snapshot.paramMap.get('id');
    console.log(this.id);
-   this.selectedClass = this.classService.getClass(this.id); 
-   console.log(this.selectedClass);
+  // this.selectedClass = this.classService.getClass(this.id); 
+  // console.log(this.selectedClass);
 }
 
 
