@@ -10,16 +10,7 @@ import { Class } from '../shared/class';
 export class ClassService {
 
   constructor(private http:HttpClient) { }
-
-  //   getClassess(): Class[] 
-  // {
-  //   return classes;
-  // }
-
-  // getClass(id:string) : Class
-  // {
-  //    return classes[id];
-  // }
+ 
 
   createClass(classCreated:Class)
   {
@@ -39,5 +30,14 @@ export class ClassService {
     return this.http.post('http://localhost:8080/dashboard/joinclass',classcode,{ responseType: 'text' as 'json'  });
   }
 
+  getCreatedClassess()
+  {
+     return this.http.get<string>('http://localhost:8080/dashboard/getcreatedclassess',{ responseType: 'text' as 'json'  });
+  }
+
+  getJoinedClassess()
+  {
+    return this.http.get<string>('http://localhost:8080/dashboard/getjoinedclassess',{ responseType: 'text' as 'json'  });
+ }
 }
 

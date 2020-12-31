@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserAccountService } from '../services/userAccount.service';
 
 @Component({
   selector: 'app-dash-board',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardComponent implements OnInit {
 
-  constructor() { }
+  loggedin:boolean;
+  constructor(private useraccount:UserAccountService , private router: Router) { }
 
   ngOnInit(): void {
+    
+    this.loggedin = this.useraccount.getloggedin();
+   
+    console.log(this.loggedin);
   }
+  
+  ngAfterContentChecked()
+  {
+    this.loggedin = this.useraccount.getloggedin();
+ 
+  }
+  
 
+  
 }

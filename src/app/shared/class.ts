@@ -1,9 +1,11 @@
 
 export class Class
 {
-       // id : string;
-        name : string;
-        description : string;
+
+      id?: number;
+      classname: string;
+	  description: string;
+	  classcode?: string;
 
 
 }

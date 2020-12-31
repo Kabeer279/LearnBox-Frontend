@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { loginandsignRequest } from '../shared/loginandsignRequest';
 
 @Injectable({
@@ -7,10 +8,9 @@ import { loginandsignRequest } from '../shared/loginandsignRequest';
 })
 export class UserAccountService {
 
+  loggedin = false;
   constructor(private http:HttpClient) { }
  
-
-
   signup(signupdetails:loginandsignRequest)
   {
     console.log(signupdetails);
@@ -23,6 +23,15 @@ export class UserAccountService {
 
     console.log(logindetails);
     return this.http.post<string>('http://localhost:8080/useraccount/login/',logindetails,{ responseType: 'text' as 'json'  });
+  }
+
+  getloggedin()
+  {
+    return this.loggedin;
+  }
+  setloggedin(value:boolean)
+  {
+    this.loggedin = value;
   }
 
   logout()

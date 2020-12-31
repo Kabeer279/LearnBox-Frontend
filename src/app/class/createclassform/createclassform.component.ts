@@ -35,6 +35,12 @@ export class CreateclassformComponent implements OnInit {
     })
   }
 
+  sample()
+  {
+    this.createClassForm.value.classname = "cse";
+    this.createClassForm.value.description = "cse";
+    this. submitCreateClassForm();
+  }
   submitCreateClassForm()
   {
     this.classCreated = this.createClassForm.value;
