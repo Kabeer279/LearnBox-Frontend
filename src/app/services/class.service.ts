@@ -14,30 +14,42 @@ export class ClassService {
 
   createClass(classCreated:Class)
   {
-    return this.http.post<string>('http://localhost:8080/dashboard/createclass',classCreated,{ responseType: 'text' as 'json'  });
-  }
-
-  postData(id:string)
-  {
-    return this.http.post('http://localhost:8080/dashboard/checkusers',id,{ responseType: 'text' as 'json'  });
-    //,{ responseType: 'text' as 'json'  }  // when using response enitiy use this line
-    //{ responseType: 'application/octet-stream'}
-    //,{ responseType: 'blob'}
+    return this.http.post<string>('http://localhost:8080/dashboard/createclass/',classCreated,{ responseType: 'text' as 'json'  });
   }
 
   joinClass(classcode:string)
   {
-    return this.http.post('http://localhost:8080/dashboard/joinclass',classcode,{ responseType: 'text' as 'json'  });
+    return this.http.post('http://localhost:8080/dashboard/joinclass/',classcode,{ responseType: 'text' as 'json'  });
   }
 
   getCreatedClassess()
   {
-     return this.http.get<string>('http://localhost:8080/dashboard/getcreatedclassess',{ responseType: 'text' as 'json'  });
+     return this.http.get<string>('http://localhost:8080/dashboard/getcreatedclassess/',{ responseType: 'text' as 'json'  });
   }
 
   getJoinedClassess()
   {
-    return this.http.get<string>('http://localhost:8080/dashboard/getjoinedclassess',{ responseType: 'text' as 'json'  });
+    return this.http.get<string>('http://localhost:8080/dashboard/getjoinedclassess/',{ responseType: 'text' as 'json'  });
  }
-}
+
+ getCreatedClass(classId : string)
+ {
+   return this.http.get<string>('http://localhost:8080/dashboard/getcreatedclass/'+ classId,{ responseType: 'text' as 'json'  });
+ }
+
+
+
+
+
+ 
+ postData(id:string)
+ {
+   return this.http.post('http://localhost:8080/dashboard/checkusers/',id,{ responseType: 'text' as 'json'  });
+   //,{ responseType: 'text' as 'json'  }  // when using response enitiy use this line
+   //{ responseType: 'application/octet-stream'}
+   //,{ responseType: 'blob'}
+ }
+
+ }
+
 

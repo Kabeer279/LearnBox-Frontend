@@ -11,18 +11,32 @@ import { Class } from '../../shared/class';
 export class StreamComponent implements OnInit {
 
   id : string;
-  selectedClass : Class;
+  selectedClass : Class = new Class;
+ 
   mes : string;
+
+  classname:string;
+  description:string;
 
   constructor(private classService : ClassService,private route: ActivatedRoute) {}
 
 ngOnInit() {
    this.id = this.route.snapshot.paramMap.get('id');
    console.log(this.id);
-  // this.selectedClass = this.classService.getClass(this.id); 
-   console.log(this.selectedClass);
-   this.classService.postData(this.id)
-   .subscribe(data => console.log(data));
+  
+   setTimeout(()=>{
+          this.classService.getCreatedClass(this.id)
+              .subscribe(sclass => {
+                  this.selectedClass = JSON.parse(sclass) as Class;
+              
+                  this.classname = this.selectedClass.classname;
+                  console.log(this.selectedClass.classname);
+                });
+              }, 1000)  ;
+
+  
+   //this.description = this.selectedClass.description;
+ 
    
 }
 
