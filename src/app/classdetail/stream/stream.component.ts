@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CommentService } from 'src/app/services/comment.service';
+import { Comment } from 'src/app/shared/comment';
 import { ClassService } from '../../services/class.service';
 import { Class } from '../../shared/class';
 
@@ -12,33 +15,79 @@ export class StreamComponent implements OnInit {
 
   id : string;
   selectedClass : Class = new Class;
- 
-  mes : string;
+  submittedComment:Comment = new Comment;
+  comments:Comment[] = [];
+  commentForm :FormGroup;
+  click:boolean = false;
+  curDate = new Date();
 
-  classname:string;
-  description:string;
-
-  constructor(private classService : ClassService,private route: ActivatedRoute) {}
+  constructor(private classService : ClassService,private route: ActivatedRoute,
+    private fb: FormBuilder ,private commentservice:CommentService  ) {
+      this.createForm();
+    }
 
 ngOnInit() {
+
+  this.getComments();
    this.id = this.route.snapshot.paramMap.get('id');
-   console.log(this.id);
-  
+   
    setTimeout(()=>{
           this.classService.getCreatedClass(this.id)
               .subscribe(sclass => {
                   this.selectedClass = JSON.parse(sclass) as Class;
-              
-                  this.classname = this.selectedClass.classname;
                   console.log(this.selectedClass.classname);
                 });
               }, 1000)  ;
 
-  
-   //this.description = this.selectedClass.description;
+  this.commentForm = new FormGroup({
+    comment: new FormControl('',Validators.required),
+    
+  })
  
-   
 }
+
+createForm() {
+  this.commentForm= this.fb.group({
+    comment: ['', ],
+   });
+}
+
+submitComment()
+{
+  console.log(this.commentForm.value);
+  this.click = true;
+  this.submittedComment.classId = this.selectedClass.id;
+  this.submittedComment.text = this.commentForm.value.comment;
+  this.submittedComment.time = this.curDate.toISOString();
+  console.log(this.submittedComment.time);
+  this.commentservice.createComment(this.submittedComment)
+        .subscribe(comment =>{
+         console.log(comment);
+        });
+        this.getComments();
+        
+}
+
+getComments()
+{
+  setTimeout(()=>{
+    this.commentservice.getAllComments(this.id)
+        .subscribe (allcomments =>
+          {
+            this.comments = JSON.parse(allcomments) as Comment[];
+            console.log(this.comments);
+          }); 
+      }, 500)  ;
+}
+
+
+  
+
+
+
+
+
+
 
 
 }

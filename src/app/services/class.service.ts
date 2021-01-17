@@ -37,11 +37,6 @@ export class ClassService {
    return this.http.get<string>('http://localhost:8080/dashboard/getcreatedclass/'+ classId,{ responseType: 'text' as 'json'  });
  }
 
-
-
-
-
- 
  postData(id:string)
  {
    return this.http.post('http://localhost:8080/dashboard/checkusers/',id,{ responseType: 'text' as 'json'  });

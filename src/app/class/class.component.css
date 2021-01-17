@@ -1,13 +1,55 @@
-.example-card {
-    max-width: 200px;
-  }
-  
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+/* .example-card {
+    size: 30px;
+  } */
 
-  .header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba2.jpg');
-  }
-   
+  .example-card {
+     max-width: 330px;
+     margin: 40px;
+     margin-bottom: -10px;
+    
+     background-color: white;
+     color: black;
+     /* box-shadow: 2px 2px 2px 2px #888888; */
+     box-shadow: 2px 2px 2px grey;
+
+   }
+  
+   img{
+  
+   height: 120px;
+ 
+   }
+   h1
+   {
+      margin-left: -10px;
+      margin-bottom: -10px;
+      padding-left : 50px;
+      font-size: 22px;
+    }
+    .classname
+    { 
+      font-size: 20px;
+    }
+    .classcode
+    {
+        color:grey;
+    }
+ 
+
+
+
+    .btn {
+      background-color: DodgerBlue; /* Blue background */
+      border: none; /* Remove borders */
+      color: white; /* White text */
+      padding: 12px 16px; /* Some padding */
+      font-size: 16px; /* Set a font size */
+      cursor: pointer; /* Mouse pointer on hover */
+    }
+    
+    /* Darker background on mouse-over */
+    .btn:hover {
+      background-color: RoyalBlue;
+    }
+  
+

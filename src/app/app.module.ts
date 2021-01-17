@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -37,11 +37,12 @@ import { SignupComponent } from './signup/signup.component';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { CreateclassformComponent } from './class/createclassform/createclassform.component';
 import { JoinClassFormComponent } from './class/join-class-form/join-class-form.component';
+import { CoverpageComponent } from './coverpage/coverpage.component';
+import { HeaderComponent } from './dash-board/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     ClassComponent,
     ClassdetailComponent,
     ClassHeaderComponent,
@@ -50,7 +51,9 @@ import { JoinClassFormComponent } from './class/join-class-form/join-class-form.
     SignupComponent,
     DashBoardComponent,
     CreateclassformComponent,
-    JoinClassFormComponent
+    JoinClassFormComponent,
+    CoverpageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

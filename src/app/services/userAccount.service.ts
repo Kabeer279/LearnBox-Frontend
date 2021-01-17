@@ -38,6 +38,7 @@ export class UserAccountService {
   {
     return this.http.delete('http://localhost:8080/useraccount/logout/',{ responseType: 'text' as 'json'  })
     .subscribe(data => console.log(data));
+    
   }
 
   

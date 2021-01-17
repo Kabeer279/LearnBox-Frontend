@@ -1,0 +1,58 @@
+/* .example-spacer {
+    flex: 1 1 auto;
+  } */
+
+  .navbar-custom { 
+    background-color: #00cfd5; 
+}
+
+.nav-link 
+{
+  color: white;
+  font-weight: 500;
+  font-size: large;
+}
+
+.masthead {
+  padding-top: 180px;
+  padding-bottom: 300px;
+  background-color: #1f2d41;
+}
+
+.masthead .masthead-subheading {
+  font-size: 1.25rem;
+}
+
+.check
+{
+  font-size:40px;
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+
+
+.page-section {
+  padding: 50px;
+  background-color: #1f2d41;
+}
+.page-section .page-section-heading {
+  font-size: 2.25rem;
+  line-height: 2rem;
+}
+
+
+.contact-section {
+  padding: 6rem 0;
+  background-color: white;
+}
+.contact-section .page-contact-heading {
+  font-size: 2.25rem;
+  line-height: 2rem;
+}

@@ -1,14 +1,19 @@
 <br>
 
-<div class="container">
-    <br><br><br><br>
+
+<div class="container-fluid">
+    
+    <img src="./assets/cse.png" alt="yes">
         <div class = "title">
-            CS8501- {{selectedClass.classname}}
-            {{selectedClass.description}}
+            <p> {{selectedClass.classname}}</p>
+            <p>{{selectedClass.description}}</p>
+        </div>
+        <div class="classcode">
+            <p>Class Code : {{selectedClass.classcode}} </p>
         </div>
   </div>
   
-  <br><br><br><br>
+  
   
   <div class="container-fluid">
     <div class="row content">
@@ -29,15 +34,24 @@
         
   
         <h4>Comment:</h4>
-        <form role="form">
-          <div class="form-group">
-            <textarea class="form-control" placeholder="Announce something to your class" rows="3" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-success">Submit</button>
-        </form>
+
+        <form novalidate [formGroup]="commentForm" >
+            <div class="form-group">
+              <textarea class="form-control" formControlName="comment" placeholder="Announce something to your class" rows="3" required></textarea>
+            </div>
+            
+         </form>
+         <button type="submit" class="btn btn-success" (click)="submitComment()">Submit</button>
+          <mat-list *ngIf =" comments" >
+            <mat-list-item *ngFor = "let comment of comments " >
+                  <div mat-line style="color: black;">{{comment.text}} stars</div>
+                  <div mat-line style="color: black;">--{{comment.username}} {{comment.time}}</div>
+            </mat-list-item>
+          </mat-list>
+
+          
         <br><br>
-        
-       
+    
       </div>
     </div>
   </div>

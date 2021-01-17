@@ -1,13 +1,45 @@
 .title{
      
-    border: red;
-    border-style: dashed;
+    position: absolute;
+    top: 70px;
+    left: 120px;
+    
     font-size: 50px;
 }
-
-.container{
-    
-   border: red;
-   border-style: dashed;
-   font-size: 50px;
+ .title p
+{
+    padding: 20px;
+    text-transform: uppercase;
 }
+.classcode
+{   
+    position: absolute;
+    top: 300px;
+    left: 140px;
+    font-size: 25px;
+}
+
+.container-fluid{
+    
+    padding-left: 64px;
+    /* border: darkmagenta;
+    border-style: dashed; */
+    color: white;
+    font-weight: 500;
+    
+}
+img{
+    border-radius: 20px;
+    width: 1400px;
+    height: 340px;
+}
+
+form{
+    /* box-shadow: 2px 2px 2px grey; */
+   
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+

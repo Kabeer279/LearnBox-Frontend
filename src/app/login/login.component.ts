@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
    this.loginservice.setloggedin(true);
       
     this.dialogRef.close();
-    //this.router.navigateByUrl('/class');
+    this.router.navigateByUrl('/dashboard');
   }
 
 }

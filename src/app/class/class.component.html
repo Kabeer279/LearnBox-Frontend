@@ -1,93 +1,74 @@
-<div class="container-fluid">
-  <div class="row content">
+<div class="bg-light" >
+<div class="container-fluid bg-light" style="padding-top: 110px;">
+  <div class="row content" style="padding-right:60px;">
     <div class="col-sm-10">
     </div>
 
     <div class="col-sm-1">
-      <button type="submit" class="btn btn-primary" (click)="createClass()">Create</button>
+      <button class="btn" (click)="createClass()"><i class="fa fa-th-large" style="padding-right:4px;"></i>Create</button>
     </div>
     <div class="col-sm-1">
-      <button type="submit" class="btn btn-primary" (click)="joinClass()" >Join</button>
+      <button class="btn" (click)="joinClass()"><i class="fa fa-window-maximize" style="padding-right:16px;padding-left: 14px;"></i> Join</button>
     </div>
+
+
+
   </div>
 </div>
 
-<br>
-<!-- <div class="row">
-    <div class="col-sm-1"> -->
-
+      <div style="margin-top: -16px;">
       <!-- CREATED CLASSESS -->
-      <h1 *ngIf ="createdClasses">CREATED CLASSESS</h1>
-<div fxLayout="row wrap" fxLayoutAlign = "space-evenly" >
-   <mat-card class="example-card" *ngFor="let clas of createdClasses " [routerLink]="['/classdetail', clas.id]">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{clas.classname}}</mat-card-title>
-      <mat-card-subtitle>{{clas.classcode}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
+      <h1 *ngIf ="createdClasses?.length">Created Classes</h1>
+<div fxLayout="row wrap" fxLayoutGap="2px"  >
+   <mat-card class="example-card" *ngFor="let clas of createdClasses " [routerLink]="['/classdetail', clas.id]" >
+       <img mat-card-image src="./assets/{{urls[clas.id]}}.png" alt="Photo of a Shiba Inu">
+    <mat-card-content >
+      <!-- ./assets/{{urls[clas.id]}}.jpg -->
+      <p class="classname">
+        {{clas.classname}}
       </p>
+      <p class="classcode">
+        Classcode : {{clas.classcode}}
+      </p>
+     
     </mat-card-content>
-    <mat-card-actions>
+    <!-- <mat-card-actions>
       <button mat-button>LIKE</button>
       <button mat-button>SHARE</button>
-    </mat-card-actions>
+    </mat-card-actions> -->
   </mat-card>
 </div>
+        <br><br><br>
 
+     
           <!-- jOINED CLASSESS -->
-          <h1 *ngIf="joinedClasses">JOINED CLASSESS</h1>
- <div fxLayout="row wrap" fxLayoutAlign = "space-evenly" >
-    <mat-card class="example-card" *ngFor="let clas of joinedClasses " [routerLink]="['/classdetail', clas.id]">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{clas.classname}}</mat-card-title>
-      <mat-card-subtitle>{{clas.classcode}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
-         
-<!--   
-  <div fxLayout="row wrap" fxLayoutAlign = "space-evenly" >
-    <mat-card  class="example-card" *ngFor="let dog of classess " [routerLink]="['/classdetail', dog.id]">
-          <mat-card-header>
-            <mat-card-title>{{dog.title}}</mat-card-title>
-            <mat-card-subtitle>{{dog.rel}}
-          </mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            {{dog.overview}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>
-            <mat-icon>favorite</mat-icon>
-          </button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
-      
-  </div> -->
+          <h1 *ngIf="joinedClasses?.length" >Joined Classes</h1>
+          <div fxLayout="row wrap" fxLayoutAlign = "space-around-between"  >
+            <mat-card class="example-card" *ngFor="let clas of joinedClasses " [routerLink]="['/classdetail', clas.id]" >
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+             <mat-card-content >
+              <p class="classname">
+                {{clas.classname}}
+              </p>
+              <p class="classcode">
+                {{clas.classcode}}
+              </p>
+             </mat-card-content>
+             <!-- <mat-card-actions>
+               <button mat-button>LIKE</button>
+               <button mat-button>SHARE</button>
+             </mat-card-actions> -->
+           </mat-card>
+         </div>
 
+         <br><br><br>
+         
+        </div>
+
+      </div>
+
+
+ 
 
   
 

@@ -1,0 +1,11 @@
+.navbar-custom { 
+   background-color:#131c2b
+    ; 
+}
+
+.nav-link 
+{
+  color: white;
+  font-weight: 400;
+  font-size: large;
+}

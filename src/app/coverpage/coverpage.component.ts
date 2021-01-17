@@ -5,11 +5,11 @@ import { UserAccountService } from '../services/userAccount.service';
 import { SignupComponent } from '../signup/signup.component';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-coverpage',
+  templateUrl: './coverpage.component.html',
+  styleUrls: ['./coverpage.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class CoverpageComponent implements OnInit {
 
   constructor(public dialog:MatDialog , private useraccountservice :UserAccountService) { }
 
@@ -24,10 +24,8 @@ export class HeaderComponent implements OnInit {
   {
     this.dialog.open (SignupComponent,{width:'500px',height:'450px'});
   }
-  logout()
-  {
-    this.useraccountservice.logout();
-  }
+  
 
   
+
 }

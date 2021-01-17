@@ -17,13 +17,18 @@ export class ClassComponent implements OnInit {
 
   createdClasses: Class[];
   joinedClasses:Class[];
-
+  urls = ['123','Biology','cse','English','EEE','Electronics'];
+  url = 'cse';
+ 
+ 
   constructor( private classService : ClassService , public dialog:MatDialog ,
     private useraccount:UserAccountService) { }
 
   ngOnInit(){
+    
       this.getcrClassess();
       this.getjoiClassess();
+   
   }
 
   // created classess
@@ -35,6 +40,7 @@ export class ClassComponent implements OnInit {
           // this.createdClasses = createdClasses;
           this.createdClasses = JSON.parse(createdclasses) as Class[];
           console.log(this.createdClasses);
+          
        }); 
        }, 500)  ;
   }
@@ -58,16 +64,16 @@ export class ClassComponent implements OnInit {
     //console.log(this.dialog);
     this.dialog.afterAllClosed.subscribe(result => {
       this.getcrClassess();
+      
     });
-    //
    
-
   }
   joinClass()
   {
     this.dialog.open (JoinClassFormComponent,{width:'500px',height:'320px'});
     this.dialog.afterAllClosed.subscribe(result => {
       this.getjoiClassess();
+      
     });
 
   }
