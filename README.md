@@ -6,17 +6,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## About The Project
 ### Built With
-* FrontEnd
+* ### FrontEnd
 
-    FrameWork : [Angular] 
+    FrameWork : [Angular](https://angular.io/) 
     
     IDE : [Visual Code](https://code.visualstudio.com/)
     
-* Backend
+* ### Backend
 
     FrameWork : Spring Boot
     
-    IDE : Eclipse
+    IDE : [Eclipse](https://www.eclipse.org/)
 
 #### Technologies used
 ```cpp
