@@ -7,12 +7,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## About The Project
 ### Built With
 * FrontEnd
-  FrameWork : [Angular] 
-  IDE : [Visual Code] (https://code.visualstudio.com/)
+
+    FrameWork : [Angular] 
+    
+    IDE : [Visual Code](https://code.visualstudio.com/)
+    
 * Backend
-  FrameWork : Spring Boot
-  IDE : Eclipse
-* IDE : [Turbo C++](https://developerinsider.co/download-turbo-c-for-windows-7-8-8-1-and-windows-10-32-64-bit-full-screen/)
+
+    FrameWork : Spring Boot
+    
+    IDE : Eclipse
+
 #### Technologies used
 ```cpp
 #include<iostream.h>
