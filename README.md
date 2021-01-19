@@ -5,13 +5,13 @@ This is a web application which is a similar clone of the Google Classroom appli
 Learn-Box helps the students and teachers to communicate with each other, discuss
 and share notes..
 ### Built With
-* ### FrontEnd
+* ### FrontEnd : [GitHub Code](https://github.com/Kabeer279/LearnBox-Frontend)
 
     FrameWork : [Angular](https://angular.io/) 
     
     IDE : [Visual Code](https://code.visualstudio.com/)
     
-* ### Backend
+* ### Backend : [GitHub Code](https://github.com/Kabeer279/LearnBox-Backend)
 
     FrameWork : Spring Boot
     
@@ -19,17 +19,8 @@ and share notes..
     
     This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
-#### Technologies used
-```cpp
-#include<iostream.h>
-#include<conio.h>
-#include<stdio.h>
-#include<process.h>
-#include<fstream.h>
-#include<dos.h>
-#include<string.h>
-#include<ctype.h>
-```
+
+
 ### Screenshots
 ![dashboard](images/dashboard.png)
 
