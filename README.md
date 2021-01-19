@@ -1,10 +1,9 @@
 # LearnBox
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
-
-# CAR SALES AND SERVICES MANAGEMENT SYSTEM C++ PROJECT
-
 ## About The Project
+This is a web application which is a similar clone of the Google Classroom application..
+Learn-Box helps the students and teachers to communicate with each other, discuss
+and share notes..
 ### Built With
 * ### FrontEnd
 
@@ -17,6 +16,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     FrameWork : Spring Boot
     
     IDE : [Eclipse](https://www.eclipse.org/)
+    
+    This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
 #### Technologies used
 ```cpp
@@ -30,10 +31,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 #include<ctype.h>
 ```
 ### Screenshots
-![Cover](images/Cover.png)
-![Cover](images/Help.png)
-![Cover](images/service.png)
-![Cover](images/Bill.png)
+![dashboard](images/dashboard.png)
+
 
 
 <!-- CONTACT -->
