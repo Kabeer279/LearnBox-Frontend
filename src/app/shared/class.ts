@@ -6,6 +6,7 @@ export class Class
       classname: string;
 	  description: string;
 	  classcode?: string;
+        imgurl:string;
 
 
 }

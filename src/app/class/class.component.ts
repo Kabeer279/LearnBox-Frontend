@@ -17,7 +17,7 @@ export class ClassComponent implements OnInit {
 
   createdClasses: Class[];
   joinedClasses:Class[];
-  urls = ['123','Biology','cse','English','EEE','Electronics'];
+  urls = ['back1','Biology','cse','English','EEE','Electronics'];
   url = 'cse';
  
  

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CommentService } from 'src/app/services/comment.service';
+import { MembersService } from 'src/app/services/members.service';
 import { Comment } from 'src/app/shared/comment';
 import { ClassService } from '../../services/class.service';
 import { Class } from '../../shared/class';
@@ -22,7 +23,7 @@ export class StreamComponent implements OnInit {
   curDate = new Date();
 
   constructor(private classService : ClassService,private route: ActivatedRoute,
-    private fb: FormBuilder ,private commentservice:CommentService  ) {
+    private fb: FormBuilder ,private commentservice:CommentService,private memberservice:MembersService  ) {
       this.createForm();
     }
 
@@ -38,6 +39,14 @@ ngOnInit() {
                   console.log(this.selectedClass.classname);
                 });
               }, 1000)  ;
+
+   setTimeout(()=>{
+              this.memberservice.getClassOwner(this.selectedClass.classcode)
+              .subscribe(owner =>{
+                console.log(this.selectedClass.classcode);
+                console.log("yes crt"+owner);
+              });    
+            }, 3000)  ;
 
   this.commentForm = new FormGroup({
     comment: new FormControl('',Validators.required),
@@ -75,11 +84,16 @@ getComments()
         .subscribe (allcomments =>
           {
             this.comments = JSON.parse(allcomments) as Comment[];
+            this.comments.reverse();
             console.log(this.comments);
           }); 
       }, 500)  ;
 }
-
+checked:boolean;
+check()
+{
+  this.checked = true;
+}
 
   
 

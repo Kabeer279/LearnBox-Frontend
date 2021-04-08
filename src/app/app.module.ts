@@ -39,6 +39,7 @@ import { CreateclassformComponent } from './class/createclassform/createclassfor
 import { JoinClassFormComponent } from './class/join-class-form/join-class-form.component';
 import { CoverpageComponent } from './coverpage/coverpage.component';
 import { HeaderComponent } from './dash-board/header/header.component';
+import { MembersComponent } from './classdetail/members/members.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { HeaderComponent } from './dash-board/header/header.component';
     CreateclassformComponent,
     JoinClassFormComponent,
     CoverpageComponent,
-    HeaderComponent
+    HeaderComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,

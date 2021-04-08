@@ -21,7 +21,7 @@
       <h1 *ngIf ="createdClasses?.length">Created Classes</h1>
 <div fxLayout="row wrap" fxLayoutGap="2px"  >
    <mat-card class="example-card" *ngFor="let clas of createdClasses " [routerLink]="['/classdetail', clas.id]" >
-       <img mat-card-image src="./assets/{{urls[clas.id]}}.png" alt="Photo of a Shiba Inu">
+       <img mat-card-image src="./assets/{{clas.imgurl}}.png" alt="{{clas.imgurl}}">
     <mat-card-content >
       <!-- ./assets/{{urls[clas.id]}}.jpg -->
       <p class="classname">
@@ -45,7 +45,7 @@
           <h1 *ngIf="joinedClasses?.length" >Joined Classes</h1>
           <div fxLayout="row wrap" fxLayoutAlign = "space-around-between"  >
             <mat-card class="example-card" *ngFor="let clas of joinedClasses " [routerLink]="['/classdetail', clas.id]" >
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <img mat-card-image src="./assets/{{clas.imgurl}}.png" alt="Photo of a Shiba Inu">
              <mat-card-content >
               <p class="classname">
                 {{clas.classname}}

@@ -34,12 +34,29 @@ img{
     height: 340px;
 }
 
-form{
-    /* box-shadow: 2px 2px 2px grey; */
-   
-    border: none;
-    background-color: transparent;
-    resize: none;
-    outline: none;
+textarea{
+    box-shadow: 1px 1px 2px  grey;
+    border-radius: 8px;
+ }
+
+mat-list-item {
+
+    border:1px solid rgba(0, 0,0, .25);
+   border-radius: 10px;
+    
+    border-style:solid;
+    
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
+
+
+
+
+
+
+
+
+
+
 
