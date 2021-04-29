@@ -63,7 +63,7 @@
          <mat-list *ngIf =" comments" >
             <mat-list-item *ngFor = "let comment of comments " >
               <img matListAvatar src =  "./assets/back1.jpg" alt ="yes">
-                  <div mat-line style="color: black;">{{comment.text}} stars</div>
+                  <div mat-line style="color: black;">{{comment.text}} </div>
                   <div mat-line style="color: black;">--{{comment.username}} {{comment.time}}</div>
             </mat-list-item>
           </mat-list>

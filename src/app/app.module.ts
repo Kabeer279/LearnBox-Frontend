@@ -40,6 +40,7 @@ import { JoinClassFormComponent } from './class/join-class-form/join-class-form.
 import { CoverpageComponent } from './coverpage/coverpage.component';
 import { HeaderComponent } from './dash-board/header/header.component';
 import { MembersComponent } from './classdetail/members/members.component';
+import { ClassworkComponent } from './classdetail/classwork/classwork.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MembersComponent } from './classdetail/members/members.component';
     JoinClassFormComponent,
     CoverpageComponent,
     HeaderComponent,
-    MembersComponent
+    MembersComponent,
+    ClassworkComponent
   ],
   imports: [
     BrowserModule,

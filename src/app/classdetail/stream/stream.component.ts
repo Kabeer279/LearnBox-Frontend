@@ -38,7 +38,7 @@ ngOnInit() {
                   this.selectedClass = JSON.parse(sclass) as Class;
                   console.log(this.selectedClass.classname);
                 });
-              }, 1000)  ;
+              }, 200)  ;
 
    setTimeout(()=>{
               this.memberservice.getClassOwner(this.selectedClass.classcode)
@@ -71,7 +71,7 @@ submitComment()
   console.log(this.submittedComment.time);
   this.commentservice.createComment(this.submittedComment)
         .subscribe(comment =>{
-         console.log(comment);
+         console.log("submitcomment"+comment);
         });
         this.getComments();
         
