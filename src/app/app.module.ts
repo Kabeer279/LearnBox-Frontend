@@ -30,7 +30,7 @@ import { ClassdetailComponent } from './classdetail/classdetail.component';
 import { ClassHeaderComponent } from './classdetail/class-header/class-header.component';
 import { StreamComponent } from './classdetail/stream/stream.component';
 import { ClassService } from './services/class.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { UserAccountService } from './services/userAccount.service';
 import { SignupComponent } from './signup/signup.component';
@@ -41,6 +41,7 @@ import { CoverpageComponent } from './coverpage/coverpage.component';
 import { HeaderComponent } from './dash-board/header/header.component';
 import { MembersComponent } from './classdetail/members/members.component';
 import { ClassworkComponent } from './classdetail/classwork/classwork.component';
+import { AuthInterceptor } from './auth.intercepter';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,9 @@ import { ClassworkComponent } from './classdetail/classwork/classwork.component'
 
     BrowserAnimationsModule
   ],
-  providers: [ClassService,UserAccountService],
+  providers: [ClassService,UserAccountService
+    ,[{provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}]
+  ],
   bootstrap: [AppComponent],
   entryComponents:
    [

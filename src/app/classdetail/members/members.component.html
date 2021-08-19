@@ -1,11 +1,46 @@
-<h1>Teacher</h1>
-<h3>{{classTeacher}}</h3>
+<br>
+<div class="container-fluid">
+<div class="row">
 
-<br><br>
-<h1>Students</h1>
+    <div class="col-sm-1">
+    </div>
+    
+    <div class="col-sm-11">
 
-<mat-list *ngFor = "let students of classStudents" >
+       
+        <p>Teacher<p>
+        <hr>
+  
+        <mat-list>
+            <mat-list-item>
+        <img matListAvatar src =  "./assets/back1.jpg" alt ="yes" style="width: 50px;height: 50px;">
+          <div mat-line style="color: black;font-size: 20px;">{{classTeacher}} </div>
+        </mat-list-item>
+        </mat-list>
+
+        <br><br>
+        <p>Students<p>
+        <hr>
+
+<mat-list>
+    <mat-list-item *ngFor = "let students of classStudents" style="margin-top: 10px; " >
+        <img matListAvatar src =  "./assets/back1.jpg" alt ="yes" style="width: 50px;height: 50px;">
+          <div mat-line style="color: black; font-size: 20px;">{{students}} </div>
+    </mat-list-item>
+  </mat-list>
+   
+</div>
+
+<!-- <div class="col-sm-9">
+</div> -->
+
+<!-- <mat-list *ngFor = "let students of classStudents" >
 
     <mat-list-item style = "color: black;">{{students}} </mat-list-item>
    
-</mat-list>
+</mat-list> -->.
+
+</div>
+
+
+</div>

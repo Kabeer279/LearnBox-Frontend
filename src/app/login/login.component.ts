@@ -4,6 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import {loginandsignRequest} from '../shared/loginandsignRequest';
 import { UserAccountService } from '../services/userAccount.service';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   response:string;
   
   constructor(private fb: FormBuilder ,private loginservice:UserAccountService ,
-    private router: Router,
+    private router: Router,private http:HttpClient,
     public dialogRef: MatDialogRef<LoginComponent>) {
     this.createForm();
   }
@@ -43,22 +44,37 @@ export class LoginComponent implements OnInit {
 
   sample()
   {
-    this.loginForm.value.username = "owner";
-    this.loginForm.value.password = "1234";
+    this.loginForm.value.username = "admin";
+    this.loginForm.value.password = "123";
     this.submitloginForm();
   }
   submitloginForm()
   {
     this.loginrequest = this.loginForm.value;
     //console.log(this.loginrequest);
-      this.loginservice.login(this.loginrequest)
-      .subscribe((data)=>console.log(data),
-      );
+      // this.loginservice.login(this.loginrequest)
+      // .subscribe((data)=>console.log(data),
+      // );
 
-   this.loginservice.setloggedin(true);
+    this.loginservice.setloggedin(true);
       
     this.dialogRef.close();
-    this.router.navigateByUrl('/dashboard');
+    if(this.loginrequest.username!='' && this.loginrequest.password!='')
+    {
+      this.loginservice.generateToken(this.loginrequest)
+      .subscribe(
+        (response:any) => {console.log(response.jwt)
+          this.loginservice.login1(response.jwt); //storing the token in localStorage
+
+          this.router.navigateByUrl('/dashboard');
+        },
+        error => console.log("Error logging in")
+      );
+    
+    }
+
+    
+
   }
 
 }

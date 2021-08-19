@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   logout()
   {
-      this.useraccount.logout();
+      this.useraccount.logout1();
       this.router.navigateByUrl('/learn-box');
   }
 
